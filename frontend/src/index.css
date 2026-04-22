@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+html.dark body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+/* ── Fast page transitions ── */
+.page-enter {
+  animation: pageEnter 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Staggered card entrances ── */
+.stagger-1 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.03s both; }
+.stagger-2 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both; }
+.stagger-3 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.09s both; }
+.stagger-4 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
+.stagger-5 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+.stagger-6 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both; }
+.stagger-7 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.21s both; }
+.stagger-8 { animation: fadeInUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Scale-in for charts ── */
+.chart-enter {
+  animation: chartEnter 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes chartEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Tab content fade ── */
+.tab-fade {
+  animation: tabFade 0.15s ease-out both;
+}
+
+@keyframes tabFade {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Counter animation ── */
+.count-up {
+  animation: countUp 0.3s ease-out both;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ── Toast animation ── */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-in {
+  animation: slideInRight 0.25s ease-out;
+}
